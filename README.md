@@ -30,7 +30,7 @@ inputs which are read at startup. Depending on the values of these pins, a diffe
 You can therefore change the resolution of the generated signals by changing the values of PB6 and PB7 and resetting the microcontroller, but remember that you'll also need
 external circuitry to switch to the appropriate clock frequency while the device is still in reset.
 
-While running, this program generates the timing signals listed below and presents them on the specified pins; note that the ATtiny84 does not provide 
+While running, this program generates the timing signals listed below and presents them on the specified pins; note that the ATtiny85 does not provide 
 the `ACTIVE` or `!ACTIVE` signals due to a lack of GPIO pins.
 
 | Signal  | ATtiny84 Pin | ATtiny85 Pin | Description                                   |

@@ -27,8 +27,8 @@
 #define VGA_BIT_HSYNC       1
 #define VGA_BIT_VBLANK      2
 #define VGA_BIT_VSYNC       4
-#define VGA_BIT_ACTIVE      3
-#define VGA_BIT_ACTIVENOT   5
+#define VGA_BIT_ACTIVE      5
+#define VGA_BIT_ACTIVENOT   3
 
 #define REG_VGA             r16
 #define REG_SPINLOOP        r17

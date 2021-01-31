@@ -31,7 +31,7 @@ You can therefore change the resolution of the generated signals by changing the
 external circuitry to switch to the appropriate clock frequency while the device is still in reset.
 
 While running, this program generates the timing signals listed below and presents them on the specified pins; note that the ATtiny85 does not provide 
-the `ACTIVE` or `!ACTIVE` signals due to a lack of GPIO pins.
+the `!ACTIVE` signal due to a lack of GPIO pins.
 
 | Signal  | ATtiny84 Pin | ATtiny85 Pin | Description                                   |
 | ------- | ------------ | ------------ | --------------------------------------------- |
@@ -39,5 +39,7 @@ the `ACTIVE` or `!ACTIVE` signals due to a lack of GPIO pins.
 |  HSYNC  | PA1          | PB1          | Low during horizontal sync pulse.             |
 |  VBLANK | PA2          | PB2          | Low during vertical blanking interval.        |
 |  VSYNC  | PA3          | PB4          | Low during vertical sync pulse.               |
-|  ACTIVE | PA4          | -            | High during the visible region of the signal. |
+|  ACTIVE | PA4          | PB5*         | High during the visible region of the signal. |
 | !ACTIVE | PA5          | -            | Low during the visible region of the signal.  |
+
+\* PB5 on the ATtiny85 is normally the `!RESET` pin, so this is only available if you disable `!RESET` via the `RSTDISBL` fuse.

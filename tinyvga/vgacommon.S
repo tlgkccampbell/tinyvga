@@ -38,12 +38,12 @@
 // Decrements the scanline counter and jumps to the next scanline handler.
 // ===========================================================================
 .macro vga_load_next_scanline next_scanline_count, next_label, current_label
-     sbiw REG_SCANLINE_LO, 1                            // 1
+     sbiw REG_SCANLINE_LO, 1                            // 2
      brne 1f                                            // 1 (false) / 2 (true)
       ldi REG_SCANLINE_LO, lo8(\next_scanline_count)    // 1 (false)
       ldi REG_SCANLINE_HI, hi8(\next_scanline_count)    // 1 (false)
      rjmp \next_label                                   // 2 (false)
 1:    nop                                               // 1 (true)
      rjmp \current_label                                // 2 (true)
-                                                        // 6 cycles
+                                                        // 7 cycles
 .endm

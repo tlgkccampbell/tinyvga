@@ -59,11 +59,10 @@
       vga_out \signal                                   // 2
       spin 39                                           // 1 + (39 * 3) = 118
       nop                                               // 1
-      nop                                               // 1
       vga_load_next_scanline \
         \next_scanline_count, \
         \next_label, \
-        \current_label                                  // 6
+        \current_label                                  // 7
                                                         // 128 cycles * (8 dots / cycle) = 1024 dots
 .endm
 

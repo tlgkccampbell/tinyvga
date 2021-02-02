@@ -59,11 +59,10 @@
 .macro vga_active signal next_scanline_count, next_label, current_label
       vga_out \signal                                   // 2
       spin 30                                           // 1 + (30 * 3) = 91
-      nop                                               // 1
       vga_load_next_scanline \
         \next_scanline_count, \
         \next_label, \
-        \current_label                                  // 6
+        \current_label                                  // 7
                                                         // 100 cycles * (8 dots / cycle) = 800 dots
 .endm
 
